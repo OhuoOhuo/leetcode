@@ -51,7 +51,7 @@
  * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+class Solution19 {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode pre = head;
         int i = 0;
