@@ -58,7 +58,7 @@
 import java.util.Stack;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution20 {
     public boolean isValid(String s) {
 
         if (s == null || s.length() < 2) {
