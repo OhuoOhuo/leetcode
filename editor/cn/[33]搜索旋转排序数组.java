@@ -47,18 +47,24 @@ class Solution {
             return -1;
         }
 
+        int markNum = nums[0];
         int left = 0;
         int right = nums.length - 1;
-        //int mid = (left + right)/2;
-        while (left < right) {
+        while (left <= right) {
             int mid = (left + right) / 2;
             if (nums[mid] == target) {
                 return mid;
-            }else {
-                if(nums[mid-1] <nums[mid]){
-                    right = mid;
+            } else if (nums[mid] > target) {
+                if (target >= nums[left]) {
+                    right = mid - 1;
+                } else {
+                    left = mid + 1;
+                }
+            } else {
+                if(target >= nums[left]){
+                    left = mid + 1;
                 }else {
-                    left = mid;
+                    right = mid-1;
                 }
             }
         }
@@ -66,7 +72,8 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        search(new int[]{4,5,6,7,0,1,2},0);
+        int search = search(new int[]{4,5,6,7,8,1,2,3}, 8);
+        System.out.println(search);
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
