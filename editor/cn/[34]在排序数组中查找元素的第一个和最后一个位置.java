@@ -84,6 +84,10 @@ class Solution34 {
         int[] ints = searchRange(new int[]{5, 7, 7, 8, 8, 1}, 8);
         System.out.println(ints);
 
+        System.out.println(~6);
+
+        System.out.println(Integer.toBinaryString(~6));
+
     }
 
 }
