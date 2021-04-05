@@ -54,6 +54,7 @@ public class rollback {
         List<List<Integer>> permute = permute(new int[]{1, 2, 3, 4});
         System.out.println(permute);
         //N皇后问题
+        System.out.println("!!!!!!!!!!!!!!!!");
         List<int[]> ints = nQueues(8);
         System.out.println(ints.size());
         //子集问题

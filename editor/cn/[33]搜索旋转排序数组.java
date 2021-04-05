@@ -41,7 +41,7 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution33 {
     public static int search(int[] nums, int target) {
         if (nums == null && (nums.length == 1 && nums[0] != target)) {
             return -1;
