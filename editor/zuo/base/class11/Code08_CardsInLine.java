@@ -12,8 +12,15 @@ public class Code08_CardsInLine {
         int[] arr = {4, 7, 9, 5, 19, 29, 80, 4};
         System.out.println(getMax(arr));
 
-     //   System.out.println(dpWay(arr));
+        System.out.println(dpWay(arr));
 
+    }
+
+    private static int dpWay(int[] arr) {
+
+
+
+        return 0;
     }
 
     private static int getMax(int[] arr) {

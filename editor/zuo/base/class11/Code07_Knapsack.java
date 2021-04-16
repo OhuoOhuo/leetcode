@@ -12,9 +12,35 @@ public class Code07_Knapsack {
     public static void main(String[] args) {
         int[] weights = { 3, 2, 4, 7 };
         int[] values = { 5, 6, 3, 19 };
-        int bag = 13;
+        int bag = 11;
         System.out.println(maxValue(weights, values, bag));
-        //System.out.println(dpWay(weights, values, bag));
+        System.out.println(dpWay(weights, values, bag));
+    }
+
+    private static int dpWay(int[] weights, int[] values, int bag) {
+        if(bag <=0||weights==null || weights.length<0){
+            return 0;
+        }
+
+        int N = weights.length;
+        int M = bag;
+        int[][] dp= new int[N+1][M+1];
+
+        for (int i = N -1; i >=0 ; i--) {
+            for (int rest = 0; rest <= bag ; rest++) {
+
+                int p1 = dp[i+1][rest];
+                int p2 =-1;
+                if(rest >= weights[i]){
+                    int pro = dp[i+1][rest-weights[i]];
+                    p2 = pro+values[i];
+                }
+                dp[i][rest] = Math.max(p1,p2);
+            }
+        }
+
+
+        return dp[0][bag];
     }
 
     private static int maxValue(int[] weights, int[] values, int bag) {
@@ -34,20 +60,17 @@ public class Code07_Knapsack {
      * @return
      */
     private static int process(int i, int[] weights, int[] values, int reset) {
-
         if(i == weights.length){//base case 超过时返回0
             return 0;
         }
-
         //i不加入背包
         int p1 = process(i + 1, weights, values, reset);
         //i加入背包
         int p2 =-1;
-        if(weights[i] <reset){
+        if(weights[i] <=reset){
             int process2 = process(i+1,weights,values,reset - weights[i]);
             p2 = process2+values[i];
         }
         return Math.max(p1,p2);
-
     }
 }

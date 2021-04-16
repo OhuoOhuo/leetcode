@@ -3,7 +3,7 @@ package base.class03;
 import java.util.Arrays;
 
 /**
- * @author ：hyf
+ * @author ：cwf
  * @description：快排和荷兰国旗问题 荷兰国旗问题：把一个数组，按照数组中的一个数组，小于的放左边，等于的放中间，大于的放右边
  * <p>
  * <p>

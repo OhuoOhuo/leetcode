@@ -1,7 +1,7 @@
 package base.class02;
 
 /**
- * @author ：hyf
+ * @author ：cwf
  * @date ：Created in 2021/3/11 14:06
  * @description：数组实现队列
  * @modified By：

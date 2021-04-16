@@ -11,8 +11,41 @@ package base.class11;
 public class Code06_ConvertToLetterString {
 
     public static void main(String[] args) {
-        System.out.println(number("11111"));
-        //System.out.println(dpWay("11231101"));
+        System.out.println(number("11231101"));
+        System.out.println(dpWay("11231101"));
+    }
+
+    private static int dpWay(String str) {
+        if (str == null || str.length() == 0) {
+            return 0;
+        }
+        char[] chars = str.toCharArray();
+        int N = chars.length;
+
+        int[] dp = new int[N + 1];
+        dp[N] = 1;
+
+        for (int i = N - 1; i >= 0; i--) {
+            if (chars[i] == '0') {
+                dp[i] = 0;
+            }else if(chars[i] =='1'){
+                int res = dp[i+1];
+                if(i+1<N){
+                    res +=dp[i+2];
+                }
+                dp[i] =res;
+            }else if(chars[i] == '2'){
+                int res = dp[i+1];
+                if(i+1<N &&  chars[i+1] <='6'){
+                    res += dp[i+2];
+                }
+                dp[i] =res;
+            }else {
+                dp[i] = dp[i+1];
+            }
+
+        }
+        return dp[0];
     }
 
     private static int number(String str) {
@@ -41,18 +74,18 @@ public class Code06_ConvertToLetterString {
             int res = process(i + 1, chars);
             //如果 i+2 没有大于chars.length
             //i可以和i+1任何数字结合，所以也有i+2的方法次数
-            if(i+1 <chars.length){
-                res += process(i+2,chars);
+            if (i + 1 < chars.length) {
+                res += process(i + 2, chars);
             }
             return res;
         }
         //当以2 开头
         if (chars[i] == '2') {
             //i+1 次数是必须有的
-            int res = process(i+1,chars);
+            int res = process(i + 1, chars);
             //i+2 的有一定条件,i+1 的值不大于 6
-            if(i+1 <chars.length && chars[i+1]<='6'){
-                res += process(i+2,chars);
+            if (i + 1 < chars.length && chars[i + 1] <= '6') {
+                res += process(i + 2, chars);
             }
             return res;
         }

@@ -1,4 +1,4 @@
-package base;
+package trainingcamp001;
 
 /**
  * @author ：
