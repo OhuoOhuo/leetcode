@@ -3,11 +3,12 @@ package trainingcamp001.class01;
 import java.util.LinkedList;
 
 /**
- * @author ：hyf
+ * @author ：cwf
  * @description：子数组小于问题 * 给定一个数组，和一个数；
  * * 它的子数组中的最大值 - 最小值<= 给定数 ，该子数组为有效数组，求有效数组的个数。
  * * <p>
  * * 暴力解法：求出所有子数组，再一一判所有子数组是否满足
+ * 单调性！！！！是使用滑动窗口的关键
  */
 public class Code02_AllLessNumSubArray {
 
