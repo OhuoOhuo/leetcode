@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * @author ：hyf
+ * @author ：cwf
  * @date ：Created in 2021/4/23 11:25
  * @description 1.给定一个数组arr，则arr中的任意一个子数组，都一定可以计算出该子数组的累计和 和最小值，求该累计和*最小值的最大值。
  * 2.给定一个数组arr，其中每个数依次表示一个条形图的高度，相邻数间隔为1，求能划出的最大矩形面积。    （其实是同一个解法）
